@@ -1,0 +1,407 @@
+/* Accounting for Managers — print-first textbook CSS */
+
+@font-face {
+  font-family: "LibSerif";
+  src: url("fonts/LiberationSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "LibSerif";
+  src: url("fonts/LiberationSerif-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "LibSerif";
+  src: url("fonts/LiberationSerif-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "LibSerif";
+  src: url("fonts/LiberationSerif-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "LibSans";
+  src: url("fonts/LiberationSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "LibSans";
+  src: url("fonts/LiberationSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "LibSans";
+  src: url("fonts/LiberationSans-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "LibSans";
+  src: url("fonts/LiberationSans-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Deja";
+  src: url("fonts/DejaVuSans.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --ink: #1c1917;
+  --muted: #57534e;
+  --line: #d6d3d1;
+  --paper: #fffdf8;
+  --navy: #243044;
+  --navy-2: #1a2433;
+  --slate: #4a5d73;
+  --wash: #f3efe6;
+  --def: #eef2f6;
+  --tip: #eef4ef;
+  --miss: #f6eeee;
+  --mem: #f4f1e6;
+  --formula: #f1eee4;
+  --ex: #f7f5ef;
+  --life: #eef3f1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "LibSerif", "Deja", "Liberation Serif", serif;
+  font-size: 10.5pt;
+  line-height: 1.48;
+  -webkit-font-smoothing: antialiased;
+}
+
+.book { max-width: 210mm; margin: 0 auto; }
+
+.cover {
+  page: cover;
+  min-height: 250mm;
+  background: var(--navy-2);
+  color: #f4f1ea;
+  padding: 28mm 18mm 18mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  break-after: page;
+}
+.cover .eyebrow {
+  font-family: "LibSans", sans-serif;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 9pt;
+  color: #c5cdd8;
+}
+.cover h1 {
+  font-family: "LibSerif", serif;
+  font-size: 34pt;
+  line-height: 1.12;
+  margin: 18mm 0 6mm;
+  color: #f7f4ec;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.cover .subtitle {
+  font-family: "LibSans", sans-serif;
+  font-size: 14pt;
+  color: #d7ddd6;
+  margin: 0 0 10mm;
+}
+.cover .meta {
+  font-family: "LibSans", sans-serif;
+  font-size: 11pt;
+  color: #c5cdd8;
+  border-top: 1px solid rgba(244,241,234,0.18);
+  padding-top: 8mm;
+}
+.cover .rule {
+  width: 42mm;
+  height: 2px;
+  background: #c5cdd8;
+  margin: 8mm 0;
+}
+.cover-foot {
+  font-family: "LibSans", sans-serif;
+  font-size: 9pt;
+  color: #9aa6b5;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.toc { break-after: page; padding: 8mm 0 4mm; }
+.toc h1 { margin-top: 0; }
+.toc-list { list-style: none; padding: 0; margin: 0; }
+.toc-list > li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px dotted var(--line);
+  font-family: "LibSans", sans-serif;
+  font-size: 11pt;
+}
+.toc-list .sec { color: var(--muted); padding-left: 14px; font-size: 10pt; border-bottom: none; }
+.toc-kicker {
+  font-family: "LibSans", sans-serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 9pt;
+  color: var(--slate);
+}
+
+h1, h2, h3, h4 {
+  font-family: "LibSans", sans-serif;
+  color: var(--navy);
+  line-height: 1.25;
+  text-wrap: balance;
+  page-break-after: avoid;
+}
+h1 { font-size: 20pt; margin: 0 0 8pt; letter-spacing: -0.02em; }
+h2 { font-size: 13.5pt; margin: 13pt 0 7pt; padding-top: 3pt; border-top: 1.5px solid var(--navy); }
+h3 { font-size: 12pt; margin: 12pt 0 6pt; }
+h4 { font-size: 11pt; margin: 10pt 0 4pt; }
+p { margin: 0 0 7pt; orphans: 3; widows: 3; }
+.lead { font-size: 11.5pt; color: var(--muted); }
+.kicker {
+  font-family: "LibSans", sans-serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 8.5pt;
+  color: var(--slate);
+  margin: 0 0 4pt;
+}
+.chapter { break-before: page; padding-top: 2mm; }
+.chapter-head { margin-bottom: 10pt; }
+.outcome { font-size: 11pt; color: var(--ink); background: var(--wash); padding: 8pt 10pt; border-left: 3px solid var(--navy); }
+.syllabus-box {
+  margin: 10pt 0 14pt;
+  padding: 8pt 12pt;
+  border: 1px solid var(--line);
+}
+.syllabus-box .box-label,
+.box-label {
+  font-family: "LibSans", sans-serif;
+  font-size: 8pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate);
+  font-weight: 700;
+  margin: 0 0 6pt;
+}
+ul, ol { margin: 0 0 9pt; padding-left: 18pt; }
+li { margin: 0 0 3pt; }
+
+.box {
+  page-break-inside: auto;
+  margin: 8pt 0;
+  padding: 7pt 10pt 5pt;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.box-def { background: var(--def); border-color: #c5d0dc; }
+.box-simple { background: #f6f5f2; }
+.box-why { background: #f3f1ea; }
+.box-life { background: var(--life); }
+.box-logic { background: #f2f0ea; }
+.box-format { background: #fbfaf6; border-color: var(--navy); }
+.box-steps { background: #f7f6f2; }
+.box-id { background: #eef1f5; }
+.box-miss { background: var(--miss); border-color: #d9c5c5; }
+.box-mem { background: var(--mem); }
+.box-exam { background: #eef2f6; border-color: var(--navy); }
+.box-tip { background: var(--tip); border-color: #c3d4c6; }
+.box-formula { background: var(--formula); border-color: var(--navy); }
+.box-key { background: var(--wash); }
+.box-connect { background: #eef2f4; }
+.box-formula, .t-account, .qna {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.formula {
+  font-family: "LibSans", sans-serif;
+  font-weight: 700;
+  font-size: 11pt;
+  color: var(--navy);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+.formula-note { font-size: 9.5pt; color: var(--muted); margin: 4pt 0 0; }
+
+.table-wrap { margin: 8pt 0 12pt; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "LibSans", "Deja", sans-serif;
+  font-size: 9pt;
+}
+caption {
+  caption-side: top;
+  text-align: left;
+  font-family: "LibSans", sans-serif;
+  font-weight: 700;
+  font-size: 9.5pt;
+  color: var(--navy);
+  margin-bottom: 4pt;
+}
+th, td {
+  border: 1px solid #cfcbc4;
+  padding: 3.5pt 6pt;
+  vertical-align: top;
+  text-align: left;
+}
+th {
+  background: var(--navy);
+  color: #f7f4ec;
+  font-weight: 700;
+  font-size: 8.5pt;
+  letter-spacing: 0.03em;
+}
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr.narr td { border-top: none; color: var(--muted); font-size: 9pt; }
+.indent { padding-left: 18pt; display: inline-block; }
+.table-foot { font-size: 9pt; color: var(--muted); margin: 3pt 0 0; }
+.journal th:nth-child(1) { width: 16%; }
+.t-account {
+  page-break-inside: avoid;
+  margin: 8pt 0 12pt;
+  border: 1px solid var(--navy);
+  padding: 6pt;
+}
+.t-account h4 {
+  text-align: center;
+  margin: 0 0 6pt;
+  font-size: 10.5pt;
+  border: none;
+}
+.t-account table { font-size: 9pt; }
+.t-account th { background: var(--slate); }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10pt;
+}
+
+.example, .practice {
+  page-break-inside: auto;
+  margin: 10pt 0;
+  border: 1px solid var(--line);
+  background: var(--ex);
+}
+.example.level-exam, .practice.level-exam { border-color: var(--navy); }
+.ex-head { padding: 8pt 10pt 4pt; border-bottom: 1px solid var(--line); }
+.ex-kicker {
+  font-family: "LibSans", sans-serif;
+  font-size: 8pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate);
+  font-weight: 700;
+}
+.ex-head h4 { margin: 2pt 0 4pt; }
+.ex-body { padding: 8pt 10pt; background: #fff; }
+.practice-ans {
+  margin-top: 8pt;
+  padding-top: 8pt;
+  border-top: 1px dashed var(--line);
+}
+.ans-label {
+  font-family: "LibSans", sans-serif;
+  font-size: 8pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate);
+  font-weight: 700;
+}
+
+.qna {
+  page-break-inside: avoid;
+  margin: 8pt 0;
+  padding: 8pt 10pt;
+  border-left: 3px solid var(--navy);
+  background: #fbfaf6;
+}
+.qna .q { margin: 0 0 4pt; }
+.marks {
+  font-family: "LibSans", sans-serif;
+  font-size: 8pt;
+  float: right;
+  color: var(--slate);
+  letter-spacing: 0.08em;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 12pt 0;
+}
+
+.cover-mini {
+  background: var(--navy);
+  color: #f4f1ea;
+  padding: 14pt 16pt;
+  margin: 0 0 14pt;
+}
+.cover-mini h2 { color: #f4f1ea; border: none; margin: 0 0 4pt; }
+
+@media screen {
+  body { background: #e8e4db; }
+  .book {
+    background: var(--paper);
+    box-shadow: 0 12px 40px rgba(28,25,23,0.12);
+    padding: 18mm 16mm;
+    margin: 16px auto;
+  }
+  .cover { min-height: 240mm; }
+}
+
+@page {
+  size: A4;
+  margin: 14mm 13mm 16mm 13mm;
+  @bottom-left {
+    content: "Accounting for Managers  ·  MBA / PGPM";
+    font-family: "Liberation Sans", sans-serif;
+    font-size: 8pt;
+    color: #6b6560;
+  }
+  @bottom-right {
+    content: "Page " counter(page);
+    font-family: "Liberation Sans", sans-serif;
+    font-size: 8pt;
+    color: #6b6560;
+  }
+}
+@page cover {
+  margin: 0;
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+@media print {
+  body { background: white; }
+  .book { box-shadow: none; max-width: none; }
+  a { color: inherit; text-decoration: none; }
+}

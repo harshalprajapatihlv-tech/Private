@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Accounting for Managers",
+      "hasCanvas": false,
+      "bodyTextLen": 2429,
+      "bodyTextHash": "d5b64d4fb3c3819d34c60abfcdf5062c3fb9163485373860ed7788726af71fd3",
+      "bodyTextPrefix": "Accounting for Managers Contents Formulas Download PDF MBA / PGP",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Accounting for Managers",
+      "hasCanvas": false,
+      "bodyTextLen": 2398,
+      "bodyTextHash": "66f8392f1a2c113e738a0bb426059aa90f6c1f1dd9f274a0a03b546463ed5264",
+      "bodyTextPrefix": "Accounting for Managers MBA / PGPM · SEMESTER I Accounting for M",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
